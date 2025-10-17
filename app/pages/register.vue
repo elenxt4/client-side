@@ -64,14 +64,18 @@
             />
           </div>
 
-      <Button
-        type="submit"
-        :disabled="loading"
-        :label="loading ? 'Registering...' : 'Register'"
-        icon="pi pi-user-plus"
-        severity="warning"
-        class="w-full justify-center transition-transform duration-200 hover:scale-105"
-      />
+          <div v-if="loading" class="flex justify-center py-2">
+            <span class="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></span>
+          </div>
+          <Button
+            v-else
+            type="submit"
+            :disabled="loading"
+            :label="loading ? 'Registering...' : 'Register'"
+            icon="pi pi-user-plus"
+            severity="warning"
+            class="w-full justify-center transition-transform duration-200 hover:scale-105"
+          />
         </form>
 
         <p class="text-center mt-4 text-gray-400">

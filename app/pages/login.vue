@@ -36,14 +36,18 @@
             />
           </div>
 
-      <Button
-        type="submit"
-        :disabled="authStore.loading"
-        :label="authStore.loading ? 'Logging in...' : 'Login'"
-        icon="pi pi-sign-in"
-        severity="warning"
-        class="w-full justify-center transition-transform duration-200 hover:scale-105"
-      />
+          <div v-if="authStore.loading" class="flex justify-center py-2">
+            <span class="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></span>
+          </div>
+          <Button
+            v-else
+            type="submit"
+            :disabled="authStore.loading"
+            :label="authStore.loading ? 'Logging in...' : 'Login'"
+            icon="pi pi-sign-in"
+            severity="warning"
+            class="w-full justify-center transition-transform duration-200 hover:scale-105"
+          />
         </form>
 
         <div class="mt-6">
