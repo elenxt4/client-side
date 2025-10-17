@@ -22,7 +22,7 @@
             label="Go to Dashboard" 
             icon="pi pi-th-large" 
             severity="warning" 
-            class="w-full" 
+            class="w-full transition-transform duration-200 hover:scale-105" 
           />
         </NuxtLink>
         <NuxtLink to="/diablo3">
@@ -30,7 +30,7 @@
             label="Test Diablo 3 API" 
             icon="pi pi-bolt" 
             severity="secondary" 
-            class="w-full" 
+            class="w-full transition-transform duration-200 hover:scale-105" 
           />
         </NuxtLink>
       </template>
@@ -47,7 +47,7 @@
             label="Login" 
             icon="pi pi-sign-in" 
             severity="warning" 
-            class="w-full mb-4" 
+            class="w-full mb-4 transition-transform duration-200 hover:scale-105" 
           />
         </NuxtLink>
         <NuxtLink to="/register">
@@ -55,7 +55,7 @@
             label="Register" 
             icon="pi pi-user-plus" 
             severity="secondary" 
-            class="w-full" 
+            class="w-full transition-transform duration-200 hover:scale-105" 
           />
         </NuxtLink>
 

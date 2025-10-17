@@ -11,17 +11,16 @@
             label="Test Access Token"
             icon="pi pi-key"
             severity="warning"
-            class="w-full justify-center"
+            class="w-full justify-center transition-transform duration-200 hover:scale-105"
             :disabled="loading"
             @click="testToken"
-
           />
 
           <Button
             label="Get My Profile"
             icon="pi pi-user"
             severity="info"
-            class="w-full justify-center"
+            class="w-full justify-center transition-transform duration-200 hover:scale-105"
             :disabled="loading"
             @click="getProfile"
           />
@@ -30,7 +29,7 @@
               label="Get Acts"
               icon="pi pi-list"
               severity="secondary"
-              class="w-full justify-center"
+              class="w-full justify-center transition-transform duration-200 hover:scale-105"
               :disabled="loading"
               @click="getActs"
             />
@@ -51,6 +50,7 @@
                 label="Get Act"
                 icon="pi pi-search"
                 severity="success"
+                class="transition-transform duration-200 hover:scale-105"
                 :disabled="loading || !actId"
                 @click="getSpecificAct"
               />
@@ -70,7 +70,7 @@
                 label="Get Item"
                 icon="pi pi-box"
                 severity="info"
-                class="justify-center"
+                class="justify-center transition-transform duration-200 hover:scale-105"
                 :disabled="loading || !itemSlug"
                 @click="getItem"
               />
@@ -93,7 +93,7 @@
             icon="pi pi-times"
             severity="secondary"
             size="small"
-            class="text-xs"
+            class="text-xs transition-transform duration-200 hover:scale-105"
            @click="clearResponse"
           />
 

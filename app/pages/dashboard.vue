@@ -18,29 +18,29 @@
       <div class="card">
         <h2 class="text-xl font-semibold mb-4">🎮 Quick Actions</h2>
         <div class="space-y-2">
-          <Button
-              @click="testHello"
-              :disabled="loading"
-              label="Test Hello API"
-              icon="pi pi-wave-pulse"
-              severity="warning"
-              class="w-full justify-center text-sm"
-          />
-          <Button
-              @click="testProfile"
-              :disabled="loading"
-              label="Test Profile API"
-              icon="pi pi-id-card"
-              severity="secondary"
-              class="w-full justify-center text-sm"
-          />
+      <Button
+        @click="testHello"
+        :disabled="loading"
+        label="Test Hello API"
+        icon="pi pi-wave-pulse"
+        severity="warning"
+        class="w-full justify-center text-sm transition-transform duration-200 hover:scale-105"
+      />
+      <Button
+        @click="testProfile"
+        :disabled="loading"
+        label="Test Profile API"
+        icon="pi pi-id-card"
+        severity="secondary"
+        class="w-full justify-center text-sm transition-transform duration-200 hover:scale-105"
+      />
           <NuxtLink to="/diablo3">
-            <Button
-                label="Diablo 3 API Testing"
-                icon="pi pi-bolt"
-                severity="help"
-                class="w-full justify-center text-sm"
-            />
+      <Button
+        label="Diablo 3 API Testing"
+        icon="pi pi-bolt"
+        severity="help"
+        class="w-full justify-center text-sm transition-transform duration-200 hover:scale-105"
+      />
           </NuxtLink>
         </div>
       </div>
@@ -51,14 +51,14 @@
         <div class="bg-gray-900 p-3 rounded text-xs overflow-auto max-h-40">
           <pre>{{ JSON.stringify(apiResponse, null, 2) }}</pre>
         </div>
-        <Button
-            @click="apiResponse = null"
-            label="Clear Response"
-            icon="pi pi-times"
-            severity="secondary"
-            outlined
-            class="w-full mt-2 text-xs"
-        />
+    <Button
+      @click="apiResponse = null"
+      label="Clear Response"
+      icon="pi pi-times"
+      severity="secondary"
+      outlined
+      class="w-full mt-2 text-xs transition-transform duration-200 hover:scale-105"
+    />
       </div>
     </div>
   </div>

@@ -64,14 +64,14 @@
             />
           </div>
 
-          <Button
-              type="submit"
-              :disabled="loading"
-              :label="loading ? 'Registering...' : 'Register'"
-              icon="pi pi-user-plus"
-              severity="warning"
-              class="w-full justify-center"
-          />
+      <Button
+        type="submit"
+        :disabled="loading"
+        :label="loading ? 'Registering...' : 'Register'"
+        icon="pi pi-user-plus"
+        severity="warning"
+        class="w-full justify-center transition-transform duration-200 hover:scale-105"
+      />
         </form>
 
         <p class="text-center mt-4 text-gray-400">

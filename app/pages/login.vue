@@ -36,14 +36,14 @@
             />
           </div>
 
-          <Button
-              type="submit"
-              :disabled="authStore.loading"
-              :label="authStore.loading ? 'Logging in...' : 'Login'"
-              icon="pi pi-sign-in"
-              severity="warning"
-              class="w-full justify-center"
-          />
+      <Button
+        type="submit"
+        :disabled="authStore.loading"
+        :label="authStore.loading ? 'Logging in...' : 'Login'"
+        icon="pi pi-sign-in"
+        severity="warning"
+        class="w-full justify-center transition-transform duration-200 hover:scale-105"
+      />
         </form>
 
         <div class="mt-6">
@@ -56,13 +56,13 @@
             </div>
           </div>
 
-          <Button
-              @click="loginWithBattleNet"
-              label="Login with Battle.net"
-              icon="pi pi-discord"
-              severity="info"
-              class="w-full justify-center mt-4"
-          />
+      <Button
+        @click="loginWithBattleNet"
+        label="Login with Battle.net"
+        icon="pi pi-discord"
+        severity="info"
+        class="w-full justify-center mt-4 transition-transform duration-200 hover:scale-105"
+      />
         </div>
 
         <p class="text-center mt-4 text-gray-400">

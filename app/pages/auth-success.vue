@@ -14,14 +14,14 @@
             label="Go to Dashboard" 
             icon="pi pi-th-large" 
             severity="warning" 
-            class="w-full" 
+            class="w-full transition-transform duration-200 hover:scale-105" 
           />
           <NuxtLink to="/diablo3">
             <Button 
               label="Test Diablo 3 API" 
               icon="pi pi-bolt" 
               severity="secondary" 
-              class="w-full" 
+              class="w-full transition-transform duration-200 hover:scale-105" 
             />
           </NuxtLink>
         </div>
