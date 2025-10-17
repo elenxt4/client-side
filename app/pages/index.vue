@@ -17,11 +17,21 @@
           </p>
         </div>
 
-        <NuxtLink to="/dashboard" class="btn btn-primary w-full block text-center">
-          Go to Dashboard
+        <NuxtLink to="/dashboard">
+          <Button 
+            label="Go to Dashboard" 
+            icon="pi pi-th-large" 
+            severity="warning" 
+            class="w-full" 
+          />
         </NuxtLink>
-        <NuxtLink to="/diablo3" class="btn btn-secondary w-full block text-center">
-          Test Diablo 3 API
+        <NuxtLink to="/diablo3">
+          <Button 
+            label="Test Diablo 3 API" 
+            icon="pi pi-bolt" 
+            severity="secondary" 
+            class="w-full" 
+          />
         </NuxtLink>
       </template>
       <template v-else>
@@ -32,11 +42,21 @@
           </p>
         </div>
 
-        <NuxtLink to="/login" class="btn btn-primary w-full block text-center">
-          Login
+        <NuxtLink to="/login">
+          <Button 
+            label="Login" 
+            icon="pi pi-sign-in" 
+            severity="warning" 
+            class="w-full mb-4" 
+          />
         </NuxtLink>
-        <NuxtLink to="/register" class="btn btn-secondary w-full block text-center">
-          Register
+        <NuxtLink to="/register">
+          <Button 
+            label="Register" 
+            icon="pi pi-user-plus" 
+            severity="secondary" 
+            class="w-full" 
+          />
         </NuxtLink>
 
         <div class="mt-6 p-4 bg-blue-900/20 border border-blue-700 rounded-lg">

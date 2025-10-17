@@ -1,20 +1,32 @@
 <template>
   <div class="max-w-md mx-auto text-center">
-    <div class="card">
-      <h1 class="text-3xl font-bold mb-4 text-green-500">🎉 Success!</h1>
-      <p class="text-gray-300 mb-6">
-        You have been successfully authenticated with Battle.net!
-      </p>
-
-      <div class="space-y-4">
-        <button @click="goToDashboard" class="btn btn-primary w-full">
-          Go to Dashboard
-        </button>
-        <NuxtLink to="/diablo3" class="btn btn-secondary w-full">
-          Test Diablo 3 API
-        </NuxtLink>
-      </div>
-    </div>
+    <Card class="mb-0">
+      <template #title>
+        <span class="text-3xl font-bold text-green-500">🎉 Success!</span>
+      </template>
+      <template #content>
+        <p class="text-gray-300 mb-6">
+          You have been successfully authenticated with Battle.net!
+        </p>
+        <div class="space-y-4">
+          <Button 
+            @click="goToDashboard" 
+            label="Go to Dashboard" 
+            icon="pi pi-th-large" 
+            severity="warning" 
+            class="w-full" 
+          />
+          <NuxtLink to="/diablo3">
+            <Button 
+              label="Test Diablo 3 API" 
+              icon="pi pi-bolt" 
+              severity="secondary" 
+              class="w-full" 
+            />
+          </NuxtLink>
+        </div>
+      </template>
+    </Card>
   </div>
 </template>
 

@@ -1,68 +1,78 @@
 <template>
   <div class="max-w-md mx-auto">
-    <div class="card">
-      <h1 class="text-3xl font-bold text-center mb-8 text-orange-500">Login</h1>
+    <Card>
+      <template #title>
+        <span class="text-3xl font-bold text-orange-500">Login</span>
+      </template>
+      <template #content>
+        <Message v-if="error" severity="error" :closable="false">
+          {{ error }}
+        </Message>
 
-      <div v-if="error" class="bg-red-900/50 border border-red-700 rounded-lg p-3 mb-4">
-        <p class="text-red-300">{{ error }}</p>
-      </div>
-
-      <form @submit.prevent="handleLogin" class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium mb-1">Email</label>
-          <input
-              v-model="form.email"
-              type="email"
-              required
-              class="form-input"
-              :disabled="authStore.loading"
-              placeholder="your@email.com"
-          >
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium mb-1">Password</label>
-          <input
-              v-model="form.password"
-              type="password"
-              required
-              class="form-input"
-              :disabled="authStore.loading"
-              placeholder="Your password"
-          >
-        </div>
-
-        <button
-            type="submit"
-            :disabled="authStore.loading"
-            class="btn btn-primary w-full"
-        >
-          {{ authStore.loading ? 'Logging in...' : 'Login' }}
-        </button>
-      </form>
-
-      <div class="mt-6">
-        <div class="relative">
-          <div class="absolute inset-0 flex items-center">
-            <div class="w-full border-t border-gray-700"></div>
+        <form @submit.prevent="handleLogin" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Email</label>
+            <InputText
+                v-model="form.email"
+                type="email"
+                required
+                :disabled="authStore.loading"
+                placeholder="your@email.com"
+                class="w-full"
+            />
           </div>
-          <div class="relative flex justify-center text-sm">
-            <span class="px-2 bg-gray-800 text-gray-400">or</span>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Password</label>
+            <Password
+                v-model="form.password"
+                required
+                :disabled="authStore.loading"
+                placeholder="Your password"
+                :feedback="false"
+                toggleMask
+                inputClass="w-full"
+                class="w-full"
+            />
           </div>
+
+          <Button
+              type="submit"
+              :disabled="authStore.loading"
+              :label="authStore.loading ? 'Logging in...' : 'Login'"
+              icon="pi pi-sign-in"
+              severity="warning"
+              class="w-full justify-center"
+          />
+        </form>
+
+        <div class="mt-6">
+          <div class="relative">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-700"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+              <span class="px-2 bg-gray-800 text-gray-400">or</span>
+            </div>
+          </div>
+
+          <Button
+              @click="loginWithBattleNet"
+              label="Login with Battle.net"
+              icon="pi pi-discord"
+              severity="info"
+              class="w-full justify-center mt-4"
+          />
         </div>
 
-        <button @click="loginWithBattleNet" class="btn btn-primary w-full mt-4">
-          🎮 Login with Battle.net
-        </button>
-      </div>
-
-      <p class="text-center mt-4 text-gray-400">
-        Don't have an account?
-        <NuxtLink to="/register" class="text-orange-500 hover:underline">
-          Register here
-        </NuxtLink>
-      </p>
-    </div>
+        <p class="text-center mt-4 text-gray-400">
+          Don't have an account?
+          <NuxtLink to="/register" class="text-orange-500 hover:underline">
+            Register here
+          </NuxtLink>
+        </p>
+      </template>
+    </Card>
   </div>
 </template>
 
@@ -89,7 +99,7 @@ const handleLogin = async () => {
   if (result.success) {
     await navigateTo('/dashboard')
   } else {
-    error.value = result.error
+    error.value = result.error ?? 'An unknown error occurred.'
   }
 }
 

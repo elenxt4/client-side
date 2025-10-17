@@ -18,14 +18,29 @@
       <div class="card">
         <h2 class="text-xl font-semibold mb-4">🎮 Quick Actions</h2>
         <div class="space-y-2">
-          <button @click="testHello" :disabled="loading" class="btn btn-primary w-full text-sm">
-            Test Hello API
-          </button>
-          <button @click="testProfile" :disabled="loading" class="btn btn-secondary w-full text-sm">
-            Test Profile API
-          </button>
-          <NuxtLink to="/diablo3" class="btn btn-secondary w-full text-sm block text-center">
-            Diablo 3 API Testing
+          <Button
+              @click="testHello"
+              :disabled="loading"
+              label="Test Hello API"
+              icon="pi pi-wave-pulse"
+              severity="warning"
+              class="w-full justify-center text-sm"
+          />
+          <Button
+              @click="testProfile"
+              :disabled="loading"
+              label="Test Profile API"
+              icon="pi pi-id-card"
+              severity="secondary"
+              class="w-full justify-center text-sm"
+          />
+          <NuxtLink to="/diablo3">
+            <Button
+                label="Diablo 3 API Testing"
+                icon="pi pi-bolt"
+                severity="help"
+                class="w-full justify-center text-sm"
+            />
           </NuxtLink>
         </div>
       </div>
@@ -36,9 +51,14 @@
         <div class="bg-gray-900 p-3 rounded text-xs overflow-auto max-h-40">
           <pre>{{ JSON.stringify(apiResponse, null, 2) }}</pre>
         </div>
-        <button @click="apiResponse = null" class="btn btn-secondary w-full mt-2 text-xs">
-          Clear Response
-        </button>
+        <Button
+            @click="apiResponse = null"
+            label="Clear Response"
+            icon="pi pi-times"
+            severity="secondary"
+            outlined
+            class="w-full mt-2 text-xs"
+        />
       </div>
     </div>
   </div>
@@ -53,7 +73,7 @@ definePageMeta({
 const authStore = useAuthStore()
 const api = useApi()
 
-const apiResponse = ref(null)
+const apiResponse = ref<unknown | null>(null)
 const loading = ref(false)
 
 const testHello = async () => {

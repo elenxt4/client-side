@@ -7,44 +7,74 @@
       <div class="card">
         <h2 class="text-xl font-semibold mb-4">🎮 API Actions</h2>
         <div class="space-y-3">
-          <button @click="testToken" :disabled="loading" class="btn btn-primary w-full">
-            Test Access Token
-          </button>
-          <button @click="getProfile" :disabled="loading" class="btn btn-secondary w-full">
-            Get My Profile
-          </button>
-          <button @click="getActs" :disabled="loading" class="btn btn-secondary w-full">
-            Get Acts
-          </button>
+          <Button
+            label="Test Access Token"
+            icon="pi pi-key"
+            severity="warning"
+            class="w-full justify-center"
+            :disabled="loading"
+            @click="testToken"
+
+          />
+
+          <Button
+            label="Get My Profile"
+            icon="pi pi-user"
+            severity="info"
+            class="w-full justify-center"
+            :disabled="loading"
+            @click="getProfile"
+          />
+
+            <Button
+              label="Get Acts"
+              icon="pi pi-list"
+              severity="secondary"
+              class="w-full justify-center"
+              :disabled="loading"
+              @click="getActs"
+            />
+
 
           <div class="pt-4 border-t border-gray-700">
             <label class="block text-sm font-medium mb-2">Get Specific Act:</label>
             <div class="flex gap-2">
-              <input
-                  v-model.number="actId"
-                  type="number"
+              <InputNumber
+                  v-model="actId"
                   placeholder="Act ID (1-5)"
-                  class="form-input flex-1"
-                  min="1" max="5"
-              >
-              <button @click="getSpecificAct" :disabled="loading || !actId" class="btn btn-primary">
-                Get Act
-              </button>
+                  :min="1"
+                  :max="5"
+                  showButtons
+                  class="flex-1"
+              />
+              <Button
+                label="Get Act"
+                icon="pi pi-search"
+                severity="success"
+                :disabled="loading || !actId"
+                @click="getSpecificAct"
+              />
+
             </div>
           </div>
 
           <div class="pt-4 border-t border-gray-700">
             <label class="block text-sm font-medium mb-2">Get Item:</label>
             <div class="flex gap-2">
-              <input
+              <InputText
                   v-model="itemSlug"
-                  type="text"
                   placeholder="Item slug and ID"
-                  class="form-input flex-1"
-              >
-              <button @click="getItem" :disabled="loading || !itemSlug" class="btn btn-primary">
-                Get Item
-              </button>
+                  class="flex-1"
+              />
+              <Button
+                label="Get Item"
+                icon="pi pi-box"
+                severity="info"
+                class="justify-center"
+                :disabled="loading || !itemSlug"
+                @click="getItem"
+              />
+
             </div>
             <p class="text-xs text-gray-400 mt-1">
               Example: corrupted-ashbringer-Unique_Sword_2H_104_x1
@@ -57,13 +87,16 @@
       <div class="card">
         <div class="flex justify-between items-center mb-4">
           <h2 class="text-xl font-semibold">📊 Response</h2>
-          <button
-              v-if="response"
-              @click="clearResponse"
-              class="btn btn-secondary text-xs"
-          >
-            Clear
-          </button>
+          <Button
+            v-if="response"
+            label="Clear"
+            icon="pi pi-times"
+            severity="secondary"
+            size="small"
+            class="text-xs"
+           @click="clearResponse"
+          />
+
         </div>
 
         <div v-if="loading" class="text-center py-8">
@@ -107,7 +140,16 @@ definePageMeta({
 
 const api = useApi()
 
-const response = ref(null)
+interface ApiResponse {
+  error: boolean
+  data?: any
+  message?: string
+  status?: number
+  timestamp: string
+  action: string
+}
+
+const response = ref<ApiResponse | null>(null)
 const loading = ref(false)
 const actId = ref(1)
 const itemSlug = ref('corrupted-ashbringer-Unique_Sword_2H_104_x1')

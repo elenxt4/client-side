@@ -13,9 +13,13 @@
               <NuxtLink to="/dashboard" class="nav-link">Dashboard</NuxtLink>
               <NuxtLink to="/diablo3" class="nav-link">Diablo 3 API</NuxtLink>
               <span class="text-gray-300">{{ authStore.user?.first_name }}</span>
-              <button @click="authStore.logout()" class="btn btn-secondary">
-                Logout
-              </button>
+              <Button 
+                @click="authStore.logout()" 
+                label="Logout"
+                icon="pi pi-sign-out"
+                severity="secondary"
+                size="small"
+              />
             </template>
             <template v-else>
               <NuxtLink to="/login" class="nav-link">Login</NuxtLink>

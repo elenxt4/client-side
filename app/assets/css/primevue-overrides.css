@@ -1,0 +1,322 @@
+/* PrimeVue Dark Theme Overrides */
+
+/* Inputs */
+.p-inputtext,
+.p-password-input,
+.p-inputnumber-input {
+    background-color: rgb(31 41 55) !important;
+    border: 1px solid rgb(55 65 81) !important;
+    color: white !important;
+    padding: 0.75rem !important;
+    border-radius: 0.5rem !important;
+    width: 100% !important;
+}
+
+.p-inputtext:enabled:hover,
+.p-password-input:enabled:hover,
+.p-inputnumber-input:enabled:hover {
+    border-color: rgb(75 85 99) !important;
+}
+
+.p-inputtext:enabled:focus,
+.p-password-input:enabled:focus,
+.p-inputnumber-input:enabled:focus {
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    border-color: rgb(249 115 22) !important;
+    box-shadow: 0 0 0 0.2rem rgba(249, 115, 22, 0.2) !important;
+}
+
+.p-inputtext::placeholder,
+.p-password-input::placeholder,
+.p-inputnumber-input::placeholder {
+    color: rgb(156 163 175) !important;
+}
+
+/* Password component wrapper */
+.p-password {
+    width: 100% !important;
+    display: flex !important;
+    position: relative !important;
+    align-items: center !important;
+}
+
+/* Force the password wrapper to contain the icon */
+.p-password .p-input-icon-right {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.p-password > .p-inputtext,
+.p-password .p-password-input,
+.p-input-icon-right > input {
+    width: 100% !important;
+    background-color: rgb(31 41 55) !important;
+    border: 1px solid rgb(55 65 81) !important;
+    color: white !important;
+    padding: 0.75rem !important;
+    padding-left: 3rem !important;
+    border-radius: 0.5rem !important;
+}
+
+.p-password > .p-inputtext:enabled:hover,
+.p-password .p-password-input:enabled:hover,
+.p-input-icon-right > input:enabled:hover {
+    border-color: rgb(75 85 99) !important;
+}
+
+.p-password > .p-inputtext:enabled:focus,
+.p-password .p-password-input:enabled:focus,
+.p-input-icon-right > input:enabled:focus {
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    border-color: rgb(249 115 22) !important;
+    box-shadow: 0 0 0 0.2rem rgba(249, 115, 22, 0.2) !important;
+}
+
+.p-password-panel {
+    background: rgb(31 41 55) !important;
+    border: 1px solid rgb(55 65 81) !important;
+    color: white !important;
+}
+
+/* Password toggle button - FORCE it to LEFT side */
+.p-password button,
+.p-password .p-button,
+.p-password > button,
+.p-input-icon-right > .p-icon,
+.p-input-icon-right > button,
+button[data-pc-section="togglebutton"] {
+    position: absolute !important;
+    left: 1rem !important;
+    right: auto !important;
+    top: 50% !important;
+    margin: 0 !important;
+    transform: translateY(-50%) !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.25rem !important;
+    line-height: 1 !important;
+}
+
+/* Make sure password container uses flexbox to reorder */
+.p-password {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
+.p-password button:hover,
+.p-input-icon-right > button:hover,
+button[data-pc-section="togglebutton"]:hover {
+    background: rgba(75, 85, 99, 0.3) !important;
+    border-radius: 0.25rem !important;
+}
+
+.p-password .p-icon,
+.p-input-icon-right .p-icon {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+}
+
+.p-password-toggle-icon,
+.p-input-icon-right .pi {
+    color: rgb(156 163 175) !important;
+    cursor: pointer !important;
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+}
+
+.p-password button:hover .p-password-toggle-icon,
+.p-input-icon-right button:hover .pi {
+    color: rgb(249 115 22) !important;
+}
+
+/* Hide native password reveal button in Edge/Chrome */
+.p-password-input::-ms-reveal,
+.p-password-input::-ms-clear {
+    display: none !important;
+}
+
+.p-password-input::-webkit-credentials-auto-fill-button,
+.p-password-input::-webkit-contacts-auto-fill-button {
+    visibility: hidden !important;
+}
+
+/* InputNumber */
+.p-inputnumber {
+    width: 100%;
+}
+
+.p-inputnumber-input {
+    text-align: center !important;
+}
+
+.p-inputnumber-button {
+    background-color: rgb(55 65 81) !important;
+    border: 1px solid rgb(75 85 99) !important;
+    color: white !important;
+    width: 2.5rem !important;
+}
+
+.p-inputnumber-button:enabled:hover {
+    background-color: rgb(75 85 99) !important;
+    border-color: rgb(107 114 128) !important;
+}
+
+.p-inputnumber-button:enabled:active {
+    background-color: rgb(249 115 22) !important;
+    border-color: rgb(249 115 22) !important;
+}
+
+.p-inputnumber-button .p-button-icon {
+    color: white !important;
+}
+
+.p-inputnumber-button-up {
+    border-top-right-radius: 0.5rem !important;
+}
+
+.p-inputnumber-button-down {
+    border-bottom-right-radius: 0.5rem !important;
+}
+
+/* Buttons */
+.p-button {
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+}
+
+.p-button-label {
+    font-weight: 500 !important;
+    flex: 0 1 auto !important;
+}
+
+.p-button-icon {
+    font-size: 1rem !important;
+}
+
+/* Warning buttons (primary orange) */
+.p-button-warning {
+    background-color: rgb(249 115 22) !important;
+    border-color: rgb(249 115 22) !important;
+    color: white !important;
+}
+
+.p-button-warning:enabled:hover {
+    background-color: rgb(234 88 12) !important;
+    border-color: rgb(234 88 12) !important;
+}
+
+/* Secondary buttons */
+.p-button-secondary {
+    background-color: rgb(75 85 99) !important;
+    border-color: rgb(75 85 99) !important;
+    color: white !important;
+}
+
+.p-button-secondary:enabled:hover {
+    background-color: rgb(55 65 81) !important;
+    border-color: rgb(55 65 81) !important;
+}
+
+/* Info buttons */
+.p-button-info {
+    background-color: rgb(37 99 235) !important;
+    border-color: rgb(37 99 235) !important;
+    color: white !important;
+}
+
+.p-button-info:enabled:hover {
+    background-color: rgb(29 78 216) !important;
+}
+
+/* Success buttons */
+.p-button-success {
+    background-color: rgb(22 163 74) !important;
+    border-color: rgb(22 163 74) !important;
+    color: white !important;
+}
+
+.p-button-success:enabled:hover {
+    background-color: rgb(21 128 61) !important;
+}
+
+/* Help buttons */
+.p-button-help {
+    background-color: rgb(168 85 247) !important;
+    border-color: rgb(168 85 247) !important;
+    color: white !important;
+}
+
+.p-button-help:enabled:hover {
+    background-color: rgb(147 51 234) !important;
+}
+
+/* Outlined buttons */
+.p-button-outlined {
+    background-color: transparent !important;
+    border: 2px solid currentColor !important;
+}
+
+.p-button-outlined:enabled:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Small buttons */
+.p-button-sm {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+}
+
+/* Messages */
+.p-message {
+    margin-bottom: 1rem !important;
+    border-radius: 0.5rem !important;
+}
+
+.p-message-error {
+    background-color: rgba(220, 38, 38, 0.2) !important;
+    border: 1px solid rgb(185, 28, 28) !important;
+    color: rgb(252, 165, 165) !important;
+}
+
+.p-message-success {
+    background-color: rgba(22, 163, 74, 0.2) !important;
+    border: 1px solid rgb(22, 163, 74) !important;
+    color: rgb(134, 239, 172) !important;
+}
+
+.p-message-icon {
+    color: inherit !important;
+}
+
+.p-message-text {
+    color: inherit !important;
+}
+
+/* Disabled state */
+.p-disabled,
+.p-component:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+/* Ripple effect color for dark theme */
+.p-ink {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
